@@ -16,3 +16,8 @@ Victoria.test med slim4-dbal hvor backend kaldes
     - Eksempel med http.NewRequest 
     - request header Accept application/json
     - request udføres med client.Do
+
+**database**
+    - Importerer example.com/bookstore/connection
+    - go.mod er opdateret med require og replace  statements
+
