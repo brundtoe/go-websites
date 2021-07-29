@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"example.com/bookstore/dataobjects"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
 )
 
@@ -42,14 +41,16 @@ func getCustomers(c *gin.Context) {
 	var db *sql.DB
 	db, err := dataobjects.GetConnection(db)
 	if err != nil {
-		log.Fatal(err)
+		c.IndentedJSON(http.StatusBadGateway, gin.H{"message": "database connection not available"})
+		return
 	}
 	defer db.Close()
 
 	var cust dataobjects.Customer
 	customers, err := cust.FindToJson(db, "California")
 	if err != nil {
-		log.Fatal(err)
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Customers not found"})
+		return
 	}
 
 	c.IndentedJSON(http.StatusOK, customers)
