@@ -23,7 +23,7 @@ var albums = []album{
 	{ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 }
 
-var db *sql.DB
+//var db *sql.DB
 
 func main() {
 
@@ -37,7 +37,7 @@ func main() {
 }
 
 func initDB() *sql.DB {
-	db, err := dataobjects.GetConnection(db)
+	db, err := dataobjects.GetConnection()
 	if err != nil {
 		log.Fatal(err)
 	}
