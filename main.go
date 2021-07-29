@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"example.com/bookstore/dataobjects"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
@@ -22,7 +23,10 @@ var albums = []album{
 	{ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 }
 
+var db *sql.DB
+
 func main() {
+
 	router := gin.Default()
 
 	router.GET("/albums", getAlbums)
@@ -32,20 +36,22 @@ func main() {
 	router.Run("localhost:8080")
 }
 
+func initDB() *sql.DB {
+	db, err := dataobjects.GetConnection(db)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return db
+}
+
 // getAlbums responds with the list of all albums as JSON.
 func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
 func getCustomers(c *gin.Context) {
-	var db *sql.DB
-	db, err := dataobjects.GetConnection(db)
-	if err != nil {
-		c.IndentedJSON(http.StatusBadGateway, gin.H{"message": "database connection not available"})
-		return
-	}
-	defer db.Close()
 
+	db := initDB()
 	var cust dataobjects.Customer
 	customers, err := cust.FindToJson(db, "California")
 	if err != nil {
