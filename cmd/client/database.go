@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"example.com/bookstore/dataobjects"
 	"fmt"
+	"github.com/brundtoe/bookstore/dataobjects"
 	"log"
 )
 
@@ -11,7 +11,7 @@ func main() {
 
 	var db *sql.DB
 
-	db, err := dataobjects.GetConnection(db)
+	db, err := dataobjects.GetConnection()
 	if err != nil {
 		log.Fatal(err)
 	}

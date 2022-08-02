@@ -2,7 +2,7 @@ package main
 
 import (
 	"database/sql"
-	"example.com/bookstore/dataobjects"
+	"github.com/brundtoe/bookstore/dataobjects"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"

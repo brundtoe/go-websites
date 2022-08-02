@@ -18,6 +18,6 @@ Victoria.test med slim4-dbal hvor backend kaldes
     - request udføres med client.Do
 
 **database**
-    - Importerer example.com/bookstore/connection
+    - Importerer github.com/brundtoe/bookstore/connection
     - go.mod er opdateret med require og replace  statements
 

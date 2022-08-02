@@ -9,7 +9,7 @@ import (
 
 func main() {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "http://victoria.test/api/authors/12", nil)
+	req, err := http.NewRequest("GET", "http://leonora/api/authors/12", nil)
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -10,7 +10,7 @@ import (
 func main() {
 	client := http.Client{}
 	resp, err := client.Get(
-		"http://victoria.test/api/customers/7")
+		"http://leonora/api/customers/7")
 	if err != nil {
 		fmt.Println(err)
 		return
