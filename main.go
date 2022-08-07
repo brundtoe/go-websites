@@ -1,8 +1,8 @@
 package main
 
 import (
+	"brundtoe/bookstore/dataobjects"
 	"database/sql"
-	"github.com/brundtoe/bookstore/dataobjects"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"

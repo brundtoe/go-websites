@@ -1,9 +1,9 @@
 package main
 
 import (
+	"brundtoe/bookstore/dataobjects"
 	"database/sql"
 	"fmt"
-	"github.com/brundtoe/bookstore/dataobjects"
 	"log"
 )
 
