@@ -1,4 +1,4 @@
-module brundtoe/websites
+module github.com/brundtoe/websites
 
 go 1.16
 
