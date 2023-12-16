@@ -11,6 +11,8 @@ func main() {
 
 	var db *sql.DB
 
+	// Fungerer kun når MariaBD er installeret på hosten hvor programmet udføres
+
 	db, err := dataobjects.GetConnection()
 	if err != nil {
 		log.Fatal(err)
