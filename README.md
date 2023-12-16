@@ -2,10 +2,10 @@
 
 ## Opdatering december 2023
 
-- opdateret go til 1.21
-- opdateret gin til 1.9.1
-- kræver installation af MariaDB på hosten hvor cmd udføres
-
+- Opdateret go til 1.21
+- Opdateret gin til 1.9.1
+- Kræver installation af MariaDB på hosten hvor cmd udføres
+- Filen $HOME/.config/brundtoe/bookstore.env skal være opdateret med DB_HOST
 
 ## http.client
 
