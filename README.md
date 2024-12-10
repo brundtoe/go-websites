@@ -1,4 +1,9 @@
-# eksempler på Go net/http
+# Eksempler på Go net/http
+
+## Opdatering december 2024
+
+- Opdateret go til 1.23.4
+- øvrige er ikke opdateret
 
 ## Opdatering december 2023
 
@@ -14,7 +19,7 @@ mappen cmd/client indeholder følgende eksempler
 Eksempel fra bogen Learning Go Programming
     - gutenberg
 
-leonora.test med slim4-dbal hvor backend kaldes
+valdemar.test med slim4-dbal hvor backend kaldes
 
 **customers**
     - Eksempel med http.client og Client.get
